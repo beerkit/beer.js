@@ -1,6 +1,6 @@
 # beer.js
 
-Beer and breweries widgets in JavaScript using the [beer.db HTTP JSON API](http://prost.herokuapp.com/api)
+Beer and brewery widgets in JavaScript using the [beer.db HTTP JSON API](http://prost.herokuapp.com/api)
 
 
 

@@ -1,0 +1,29 @@
+{
+  "name": "beer",
+  "version": "0.0.1",
+  "title": "beer.js",
+  "description": "Beer 'n' brewery widget - brewery of the day, beer of the day, etc.",
+  "keywords": [
+    "beer",
+    "beer.db",
+    "brewery",
+    "json",
+    "jsonp"
+  ],
+  "author": {
+    "name": "Gerald Bauer",
+    "url": "https://github.com/geraldb"
+  },
+  "licenses": [
+    {
+      "type": "Public Domain",
+      "url": "http://en.wikipedia.org/wiki/Public_domain"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.10"
+  },
+  "homepage": "https://github.com/geraldb/beer.js",
+  "docs": "https://github.com/geraldb/beer.js",
+  "download": "http://code.jquery.com/#beer"
+}
