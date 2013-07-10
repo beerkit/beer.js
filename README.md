@@ -2,6 +2,10 @@
 
 Beer and brewery widgets in JavaScript using the [beer.db HTTP JSON API](http://prost.herokuapp.com/api)
 
+## Live Demo
+
+Try the beer 'n' brewery widget running
+on GitHub Pages [`geraldb.github.io/beer.js/brewery.html`](http://geraldb.github.io/beer.js/brewery.html).
 
 
 ## License
