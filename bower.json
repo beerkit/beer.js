@@ -1,0 +1,20 @@
+{
+  "name": "beer",
+  "version": "0.1.0",
+  "main": "./js/jquery.beer.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "beer.jquery.json",
+    "js/3rd"
+  ],
+   "dependencies": {
+    "jquery": "latest",
+    "underscore": "latest",
+    "requirejs": "latest",
+    "requirejs-text": "latest"
+  }
+}
