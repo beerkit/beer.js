@@ -4,10 +4,22 @@
   <meta charset='UTF-8'>
   <title>Brewery Example / beer.db JSON(P) API</title>
 
-  <script src='js/3rd/jquery-2.0.2.min.js'></script>
-  <script src='js/3rd/underscore-1.4.4.min.js'></script>
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/underscore/underscore.js'></script>
+  <script src='bower_components/requirejs/require.js'></script>
 
-  <script src='js/jquery.beer.js'></script>
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    
+    #widget {
+       /* background-color: lime; */
+       border: 1px solid gold;
+       padding: 4px;
+    }
+  </style>
 
   <script type='text/html' id='widgetTpl'>
 <h3>
@@ -25,29 +37,23 @@
      </li>
   <% }); %>
 </ul>
-</script>
-
-  <script>
-    $(document).ready( function() {
-      // NB: sportdb_widget make it global var (that is, we do NOT use var sportdb_widget)
-      beerdb_widget = beerdb_widget_new( '#widget', '#widgetTpl', 'http://prost.herokuapp.com/api/v1' );
-      beerdb_widget.update( 'guinness' );  // todo: put into document ready ?? 
-    });
   </script>
 
-  <style>
-    
-    a {
-      color: black;
-      text-decoration: none;
-    }
-    
-    #widget {
-       /* background-color: lime; */
-       border: 1px solid gold;
-       padding: 4px;
-    }
-  </style>
+
+  <script>
+    require.config( {
+      baseUrl: 'js'
+    });
+
+    require( ['beer.widget' ], function( Widget ) {
+
+      $(document).ready( function() {
+        beer_widget = Widget.create( '#widget', '#widgetTpl' );
+        beer_widget.update( 'ottakringer' );  // todo: put into document ready ?? 
+      });
+
+    }); // fn require
+  </script>
 
 </head>
 <body>
@@ -56,10 +62,10 @@
 <h1>Brewery Example / beer.db JSON(P) API</h1>
 
 <p>
-   <a href="#" onclick="beerdb_widget.update( 'guinness' ); return false;">Guinness</a> |
-   <a href="#" onclick="beerdb_widget.update( 'fuller' ); return false;">Fuller's</a> |
-   <a href="#" onclick="beerdb_widget.update( 'brooklyn' ); return false;">Brooklyn</a> |
-   <a href="#" onclick="beerdb_widget.update( 'ottakringer' ); return false;">Ottakringer</a>
+   <a href="#" onclick="beer_widget.update( 'guinness' ); return false;">Guinness</a> |
+   <a href="#" onclick="beer_widget.update( 'fuller' ); return false;">Fuller's</a> |
+   <a href="#" onclick="beer_widget.update( 'brooklyn' ); return false;">Brooklyn</a> |
+   <a href="#" onclick="beer_widget.update( 'ottakringer' ); return false;">Ottakringer</a>
 </p>
 
 <div id='widget'></div>
