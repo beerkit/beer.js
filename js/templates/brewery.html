@@ -1,0 +1,15 @@
+<h3>
+ <%= data.title %>
+</h3>
+ 
+<p>
+ <%= data.address %> - <%= data.country.title %>
+</p>
+ 
+<ul>
+ <% _.each( data.beers, function( beer, index ) { %>
+     <li>
+      <%= beer.title %>
+     </li>
+  <% }); %>
+</ul>

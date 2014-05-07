@@ -21,34 +21,19 @@
     }
   </style>
 
-  <script type='text/html' id='widgetTpl'>
-<h3>
- <%= data.title %>
-</h3>
- 
-<p>
- <%= data.address %> - <%= data.country.title %>
-</p>
- 
-<ul>
- <% _.each( data.beers, function( beer, index ) { %>
-     <li>
-      <%= beer.title %>
-     </li>
-  <% }); %>
-</ul>
-  </script>
-
-
   <script>
     require.config( {
+      paths: {
+        // 'text': 'libs/require-text-2.0.10'   // require.js text plugin
+        'text': '../bower_components/requirejs-text/text'   // require.js text plugin
+      },
       baseUrl: 'js'
     });
 
     require( ['beer.widget' ], function( Widget ) {
 
       $(document).ready( function() {
-        beer_widget = Widget.create( '#widget', '#widgetTpl' );
+        beer_widget = Widget.create( '#widget' );
         beer_widget.update( 'ottakringer' );  // todo: put into document ready ?? 
       });
 

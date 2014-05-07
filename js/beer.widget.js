@@ -5,13 +5,15 @@ define( function(require) {
   var Api = require( 'beer.api' );
   // todo: check - use Beer.Api or Beer.Service  why? why not??
 
+  var breweryTpl     = require( 'text!templates/brewery.html' );
+  var renderBrewery  = _.template( breweryTpl );
+
   var Widget = {};
 
 
 Widget.create = function( id, tplId, opts ) {
 
   var $el;
-  var renderBrewery;
   var api;
 
   var defaults = {};
@@ -24,8 +26,6 @@ Widget.create = function( id, tplId, opts ) {
     $el = $( id );
 
     api = Api.create();
-
-    renderBrewery = _.template( $( tplId ).html() );
   }
 
   function update( key )
